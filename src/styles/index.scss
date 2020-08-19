@@ -1,0 +1,110 @@
+/**
+ * Set Style Defaults:
+ */
+$page_color: black;
+$gameboard_color: #ccc;
+$snake_color: hsl(200, 100%, 50%);
+$food_color: hsl(50, 100%, 50%);
+$segment_border: 0.25vmin solid black;
+$direction_border: 0.25vmin dashed hsl(0, 100%, 50%);
+$gameover_overlay: rgba(0, 0, 0, 0.5);
+$gameover_text_color: hsl(0, 100%, 50%);
+$gameover_text_stroke: 0.25vmin white;
+
+/** Styles defined below: **/
+
+body {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    background-color: $page_color;
+}
+
+#game-board {
+    background-color: $gameboard_color;
+    width: 100vmin;
+    height: 100vmin;
+    display: grid;
+    grid-template-rows: repeat(21, 1fr);
+    grid-template-columns: repeat(21, 1fr);
+}
+
+@keyframes blinker {
+    50% {
+        opacity: 0;
+    }
+}
+
+.gameover {
+    background-color: $gameover_overlay;
+    z-index: 1000;
+    position: absolute;
+
+    .content {
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: bolder;
+        color: $gameover_text_color;
+        -webkit-text-stroke: $gameover_text_stroke;
+
+        h1 {
+            margin: 0;
+            font-size: 12rem;
+            animation: blinker 1s linear infinite;
+        }
+
+        h2 {
+            margin: 0;
+            font-size: 8rem;
+            animation: blinker 1s linear infinite;
+        }
+    }
+}
+.snake {
+    background-color: $snake_color;
+    border: $segment_border;
+}
+
+.direction {
+    width: 1fr;
+    z-index: +1;
+
+    &-up {
+        @extend .direction;
+        border-right: $direction_border;
+        margin-right: 50%;
+        margin-bottom: 50%;
+    }
+    &-right {
+        @extend .direction;
+        border-bottom: $direction_border;
+        margin-bottom: 50%;
+        margin-left: 50%;
+    }
+    &-down {
+        @extend .direction;
+        border-right: $direction_border;
+        margin-top: 50%;
+        margin-right: 50%;
+    }
+    &-left {
+        @extend .direction;
+        border-bottom: $direction_border;
+        margin-right: 50%;
+        margin-bottom: 50%;
+    }
+}
+
+.food {
+    background-color: $food_color;
+    border: $segment_border;
+    border-radius: 50%;
+}
