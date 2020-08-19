@@ -5,6 +5,7 @@
 [![Dependabot badge](https://flat.badgen.net/dependabot/wbkd/webpack-starter?icon=dependabot)](https://dependabot.com/)
 
 A simple snake game based from Web Dev Simplified.
+https://www.youtube.com/watch?v=QTcIXok9wNY
 
 ### Installation
 
