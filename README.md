@@ -7,6 +7,8 @@
 A simple snake game based from Web Dev Simplified.
 https://www.youtube.com/watch?v=QTcIXok9wNY
 
+Working Demo: http://kmarshall.com/snake-game/
+
 ### Installation
 
 ```
