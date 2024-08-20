@@ -1,11 +1,11 @@
 /**
  * Set Style Defaults:
  */
-$page_color: black;
-$gameboard_color: #ccc;
+$page_color: rgb(63, 3, 3);
+$gameboard_color: #252525;
 $snake_color: hsl(200, 100%, 50%);
 $food_color: hsl(50, 100%, 50%);
-$segment_border: 0.25vmin solid black;
+$segment_border: 0.25vmin solid rgb(198, 198, 198);
 $direction_border: 0.25vmin dashed hsl(0, 100%, 50%);
 $gameover_overlay: rgba(0, 0, 0, 0.5);
 $gameover_text_color: hsl(0, 100%, 50%);

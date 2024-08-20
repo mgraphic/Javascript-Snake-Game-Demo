@@ -2,6 +2,7 @@
 
 # APP SPECIFIC:
 snake-game.code-workspace
+private.txt
 
 # compiled output
 /dist
