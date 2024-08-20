@@ -23,14 +23,18 @@ jobs:
             - name: Build
               run: npm run build
 
-            - name: SSH Tool
-              uses: Comori/ssh@v0.0.7
+            - name: SSH Deploy
+              uses: easingthemes/ssh-deploy@v5.1.0
               with:
-                  host: ${{ secrets.HOST }}
-                  username: ${{ secrets.USERNAME }}
-                  privateKey: ${{ secrets.PRIVATEKEY }}
-                  command: |
+                  SSH_PRIVATE_KEY: ${{ secrets.PRIVATEKEY }}
+                  ARGS: '-rlgoDzvc -i'
+                  REMOTE_HOST: ${{ secrets.HOST }}
+                  REMOTE_USER: ${{ secrets.USERNAME }}
+                  SOURCE: 'build/*'
+                  TARGET: ${{ secrets.TARGETPATH }}
+                  EXCLUDE: '.git, /node_modules/'
+                  SCRIPT_BEFORE: |
                       rm -r ${{ secrets.TARGETPATH }}/*
-                  sourceFiles: |
-                      build/*
-                  targetDir: ${{ secrets.TARGETPATH }}
+                  SCRIPT_AFTER: |
+                      ls -al
+                      echo $RSYNC_STDOUT
