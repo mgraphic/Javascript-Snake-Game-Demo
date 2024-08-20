@@ -33,6 +33,7 @@ jobs:
                   SOURCE: 'build/*'
                   TARGET: ${{ secrets.TARGETPATH }}
                   EXCLUDE: '.git, /node_modules/'
+                  SCRIPT_BEFORE_REQUIRED: true
                   SCRIPT_BEFORE: |
                       rm -r ${{ secrets.TARGETPATH }}/*
                   SCRIPT_AFTER: |
