@@ -2,7 +2,7 @@
 
 ## Generated from Webpack Frontend Starterkit
 
-[![Dependabot badge](https://flat.badgen.net/dependabot/wbkd/webpack-starter?icon=dependabot)](https://dependabot.com/)
+![Deploy](https://github.com/mgraphic/Javascript-Snake-Game-Demo/actions/workflows/deploy.yml/badge.svg)
 
 A simple snake game based from Web Dev Simplified.
 https://www.youtube.com/watch?v=QTcIXok9wNY

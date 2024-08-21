@@ -35,7 +35,8 @@ jobs:
                   EXCLUDE: '.git, /node_modules/'
                   SCRIPT_BEFORE_REQUIRED: true
                   SCRIPT_BEFORE: |
+                      ls -al ${{ secrets.TARGETPATH }}
                       rm -r ${{ secrets.TARGETPATH }}/*
                   SCRIPT_AFTER: |
-                      ls -al
+                      ls -al ${{ secrets.TARGETPATH }}
                       echo $RSYNC_STDOUT
